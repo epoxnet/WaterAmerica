@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %} {% if user == current_user %}
+<p><a href="{{ url_for('edit_profile') }}">Edit your profile</a></p>
+{% endif %}
+<h1>Billing Info</h1>
+
+<h2>Welcome, {{ user.username }}</h2>
+<h3>Your account info:</h3>
+Name: {{ user.first_name }} {{ user.last_name}} <br> Email: {{ user.email }} <br> Home Address:
+
+<hr> {{ user.current_street_address }}
+<hr> {{ user.current_city }}
+<hr> {{ user.current_state }}
+<hr> {{ user.current_zip_code }} <br> {% if user.is_moving %} user is moving!!! The new address is:
+
+<hr> {{ user.future_street_address }}
+<hr> {{ user.future_city }}
+<hr> {{ user.future_state }}
+<hr> {{ user.future_zip_code }} {% else %} User is Not moving {% endif %} {% endblock %}

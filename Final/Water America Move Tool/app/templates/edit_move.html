@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Edit Move</h1>
+<table></table>
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+    <p>
+        {{form.move_date.label }} <br> {{ form.move_date(size=32) }} <br> {% for error in form.move_date.errors %}
+        <span style="color: red;">[{{ error }}]</span> {% endfor %}
+    </p>
+    <p>
+        {{form.street_address.label }} <br> {{ form.street_address(size=32) }} <br> {% for error in form.street_address.errors %}
+        <span style="color: red;">[{{ error }}]</span> {% endfor %}
+    </p>
+    <p>
+        {{form.city.label }} <br> {{ form.city(size=32) }} <br> {% for error in form.city.errors %}
+        <span style="color: red;">[{{ error }}]</span> {% endfor %}
+    </p>
+    <p>
+        {{form.state.label }} <br> {{ form.state(size=32) }} <br> {% for error in form.state.errors %}
+        <span style="color: red;">[{{ error }}]</span> {% endfor %}
+    </p>
+    <p>
+        {{form.zip_code.label }} <br> {{ form.zip_code(size=32) }} <br> {% for error in form.zip_code.errors %}
+        <span style="color: red;">[{{ error }}]</span> {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+    <p>{{ form.delete() }}</p>
+
+</form>
+{% endblock %}
